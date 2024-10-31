@@ -3,6 +3,7 @@ package com.bootcamp.bootcampbackend.entities;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
 
 import java.time.LocalDate;
 
@@ -15,7 +16,9 @@ public record Activity(
         @Column
         String description,
         @Column
-        LocalDate dateOfMentoring
+        LocalDate dateOfMentoring,
+        @ManyToOne
+        Bootcamp bootcamp
 ) {
     private static final double DEFAULT_XP = 15d;
 

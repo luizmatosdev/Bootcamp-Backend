@@ -3,10 +3,7 @@ package com.bootcamp.bootcampbackend.entities;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.OneToMany;
-
-import java.util.List;
+import jakarta.persistence.ManyToOne;
 
 @Entity
 public record Student(
@@ -14,8 +11,7 @@ public record Student(
         int id,
         @Column
         String name,
-        @OneToMany
-        @JoinColumn()
-        List<Bootcamp> bootcamps
+        @ManyToOne
+        Bootcamp bootcamp
 ) {
 }

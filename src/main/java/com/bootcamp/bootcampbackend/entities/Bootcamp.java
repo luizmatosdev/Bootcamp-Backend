@@ -3,7 +3,6 @@ package com.bootcamp.bootcampbackend.entities;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
 import jakarta.persistence.Lob;
 import jakarta.persistence.OneToMany;
 
@@ -25,10 +24,8 @@ public record Bootcamp(
         @Column(nullable = false)
         LocalDate endDate,
         @OneToMany
-        @JoinColumn()
         List<Student> students,
         @OneToMany
-        @JoinColumn()
         List<Activity> activities
 ) {
 }
