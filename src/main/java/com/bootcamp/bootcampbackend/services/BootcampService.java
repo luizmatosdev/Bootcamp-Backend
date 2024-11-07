@@ -10,10 +10,17 @@ import java.util.List;
 @Service
 public class BootcampService {
 
-    @Autowired
-    private BootcampRepository bootcampRepository;
+    private final BootcampRepository bootcampRepository;
+
+    public BootcampService(BootcampRepository bootcampRepository) {
+        this.bootcampRepository = bootcampRepository;
+    }
 
     public List<Bootcamp> getBootcampList() {
         return bootcampRepository.findAll();
+    }
+
+    public void addBootcamp(Bootcamp bootcamp) {
+        bootcampRepository.save(bootcamp);
     }
 }
